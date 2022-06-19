@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """
 Django settings for zcovid project.
 
@@ -50,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'zcovid.urls'
@@ -126,7 +126,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-=======
 """
 Django settings for zcovid project.
 
@@ -137,4 +136,8 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
+<<<<<<< HEAD
 """
+=======
+"""
+>>>>>>> 323abf2273aabf159c9d297ea14bf4d7bda6b944
