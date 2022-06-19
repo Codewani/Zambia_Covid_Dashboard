@@ -1,0 +1,245 @@
+{% extends 'base.html' %}
+        {% block styling %}
+        <style>
+          .latest-card{
+            background-color: #E8E9DF;
+          }
+          h2{
+            color: #7B8054;
+          }
+          body{
+            background-color: #F3FCF2;
+          }
+          .card{
+            border-radius: 15px;
+            transition: transform 0.5s;
+          }
+          .card:hover {
+            transform: scale(1.05);
+            }
+          /* #sidebar{
+
+          } */
+          #navbar li {
+            margin-bottom: 0px;
+          }
+          #sidebar{
+            background-color: #E8E9DF;
+            border-style: solid;
+            border-color: rgb(196, 48, 48);
+            border-radius: 5px;
+          }
+        </style>
+        {% endblock styling %}
+
+        <!-- sidenav  -->
+
+        {% block sidenav %}
+        <nav id="sidebar" class="sticky-top">
+          <div class="pl-4 pt-1">
+            <a href="#" class="img logo rounded-circle mb-2" style="background-image: url(/static/images/logo.png);"></a>
+            <ul class="list-unstyled components">
+              <li class="active">
+                <a href="#"><i class="fas fa-tachometer-alt fa-2x"></i> Dashboard</a>
+              </li>
+              <li>
+                  <a href=#>Central Province</a>
+              </li>
+              <li>
+                  <a href=#>Copperbelt Province</a>
+              </li>
+              <li>
+                  <a href=#>Eastern Province</a>
+              </li>
+              <li>
+                  <a href=#>Luapula Province</a>
+              </li>
+              <li>
+                  <a href=#>Lusaka Province</a>
+              </li>
+              <li>
+                  <a href=#>Muchinga Province</a>
+              </li>
+              <li>
+                  <a href= #>North-Western Province</a>
+              </li>
+              <li>
+                  <a href=#>Northen Province</a>
+              </li>
+              <li>
+                  <a href=#>Western Province</a>
+              </li>
+              <li>
+                  <a href=#>Southern Province</a>
+              </li>
+              </ul>
+          </div>
+        </nav>
+        {% endblock sidenav %}
+
+
+        <!-- Page Content  -->
+        {% block page_content %}
+
+       <div id="content">
+          {% include 'covidnavbar.html' %}
+          <div class="px-4 px-md-5 ">
+
+            <h2 class="mb-4  text-center">CUMULATIVE COVID-19 DATA</h2>
+            <p  style="color: rgb(196, 48, 48); font-weight: bold">In Zambia, from 3 January 2020 to 6:10pm CET, {{data.Date}}, there have been {{overall.Confirmed}} confirmed cases of COVID-19 with {{overall.Deaths}} deaths, reported to WHO. <span style="color: green">As of {{data.Date}}, a total of {{totalvaccinations}} vaccine doses have been administered.</span></p>
+            <!-- <py-env>
+- pyttsx3
+            </py-env>
+            <py-script>
+import pyttsx3
+print("hello world")
+engineio = pyttsx3.init()
+voices = engineio.getProperty('voices')
+engineio.setProperty('voice', voices[0].id)
+# print(voices[1].id)
+engineio.setProperty('rate', 115)
+# engine.say("Hello, How are you ?")
+engineio.runAndWait()
+
+def speak(str):
+    engineio.say(str)
+    engineio.runAndWait()
+#small talk
+name = input("what is your name: ")
+speak(f"Hello {name} How are you doing?")
+howareyou = input("How are you doing? ")
+words = howareyou.split(" ")  # convert sentence into a list of words
+
+if "fine" in howareyou or "okay" in words:
+    speak(f"I'm glad you're okay {name}")
+    
+elif "ill" in howareyou or "bad" in words or "sick" in words:
+    speak(f"That's too bad {name}. What is the problem?")
+    problem = input("what is the problem? ")
+    if problem:
+        speak(f"I hope you recover from this soon. Have a good day")
+            </py-script> -->
+
+
+
+              <div class="row g-3">
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card shadow my-2">
+                        <div class="card-body">
+                          <span style="font-size: 48px; color: rgb(7, 167, 68);" class="float-right">
+                            <i class="fas fa-virus fa-pulse"></i>
+                          </span>
+                          <p class="card-title">Confirmed</p>
+                          <h5 class="card-text">{{overall.Confirmed}}</h5>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card shadow my-2">
+                      <div class="card-body">
+                          <span style="font-size: 48px; color: rgb(7, 167, 68);" class="float-right">
+                            <i class="fas fa-heartbeat"></i>
+                          </span>
+                          <p class="card-title">Recoveries</p>
+                          <h5 class="card-text">{{overall.Recoveries}}</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card shadow my-2">
+                      <div class="card-body">
+                        <span style="font-size: 48px; color: rgb(223, 184, 59);" class="float-right">
+                          <i class="fas fa-virus fa-spin"></i>
+                        </span>
+                        <p class="card-title">Active Cases</p>
+                        <h5 class="card-text">{{overall.Active}}</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card shadow my-2">
+                      <div class="card-body">
+                        <span style="font-size: 48px; color: rgb(216, 14, 14);" class="float-right">
+                          <i class="fas fa-skull-crossbones"></i>
+                        </span>
+                        <p class="card-title">Deaths</p>
+                        <h5 class="card-text">{{overall.Deaths}}</h5>
+                      </div>
+                    </div>
+                </div>
+                </div>
+                <h2 class="mb-4  text-center">LATEST COVID-19 DATA</h2>
+                <div class="row g-3">
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card shadow my-2 latest-card">
+                      <div class="card-body">
+                        <span style="font-size: 48px; color: rgb(223, 184, 59);" class="float-right">
+                          <i class="fas fa-vial"></i>
+                        </span>
+                        <p class="card-title">Tests</p>
+                        <h5 class="card-text">{{data.Tests}}</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card shadow my-2 latest-card">
+                        <div class="card-body">
+                          <span style="font-size: 48px; color: rgb(7, 167, 68);" class="float-right">
+                            <i class="fas fa-virus fa-pulse"></i>
+                          </span>
+                          <p class="card-title">Confirmed</p>
+                          <h5 class="card-text">{{data.ConfirmedCases}}</h5>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card shadow my-2 latest-card">
+                      <div class="card-body">
+                          <span style="font-size: 48px; color: rgb(7, 167, 68);" class="float-right">
+                            <i class="fas fa-heartbeat"></i>
+                          </span>
+                          <p class="card-title">Recoveries</p>
+                          <h5 class="card-text">{{data.Recoveries}}</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card shadow my-2 latest-card">
+                      <div class="card-body">
+                        <span style="font-size: 48px; color: rgb(216, 14, 14);" class="float-right">
+                          <i class="fas fa-skull-crossbones"></i>
+                        </span>
+                        <p class="card-title">Deaths</p>
+                        <h5 class="card-text">{{data.Deaths}}</h5>
+                      </div>
+                    </div>
+                </div>
+                </div>
+                <div class="my-4 card">
+                  <h2 class="my-4 text-center">DAILY COVID-19 CASES IN THE PAST TWO WEEKS</h2>
+                  <div>
+                    <canvas id="dailyCases" width="800" height="400"></canvas>
+                  </div>
+                </div>
+              <div class="my-4 card">
+                <h2 class="my-4  text-center">DAILY ACTIVE CASES IN THE PAST TWO WEEKS</h2>
+                <div>
+                  <canvas id="activeCases" width="800" height="400"></canvas>
+                </div>
+              </div>
+              <div class="my-4 card">
+                <h2 class="my-4  text-center">DAILY DEATHS IN THE PAST TWO WEEKS</h2>
+                <div>
+                    <canvas id="dailyDeaths" width="800" height="400"></canvas>
+                </div>
+              </div>
+
+
+
+
+
+
+        {% endblock page_content %}
+        {% block scripts %}
+        {% include 'indexcharts.html' %}
+        {% endblock scripts%}

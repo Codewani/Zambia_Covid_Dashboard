@@ -1,0 +1,50 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+
+  	<title>ZCovid</title>
+
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <link href="{% static '/fonts/fontawesome_free/css/all.css' %}" rel="stylesheet" type="text/css">
+	  <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    {% block styling %}
+    {% endblock styling %}
+  </head>
+
+  <body>
+    <div class="wrapper d-flex align-items-stretch">
+
+        {% block sidenav %}
+        replace me
+        {% endblock sidenav %}
+
+        {% block page_content %}
+        {% endblock page_content %}
+      </div>
+
+    </div>
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <script>
+            $(document).ready(function() {
+          $('#example').DataTable();
+      } );
+    </script>
+    {% block scripts %}{% endblock scripts%}
+  </body>
+
+</html>

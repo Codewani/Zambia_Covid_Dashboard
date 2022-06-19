@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="pl-4 pt-1">
+		  		<a href="#" class="img logo rounded-circle mb-2" style="background-image: url(/static/images/logo.png);"></a>
+	        <ul class="list-unstyled components mb-2">
+	          <li class="active">
+              <a href="#">Easern Province</a>
+          </li>
+          <li>
+              <a href="#">Chadiza</a>
+          </li>
+          <li>
+              <a href="#">Katete</a>
+          </li>
+          <li>
+              <a href="#">Lundazi</a>
+          </li>
+          <li>
+              <a href="#">Mambwe</a>
+          </li>
+          <li>
+              <a href="#">Nyimba</a>
+          </li>
+          <li>
+            <a href="#">Petauke</a>
+          </li>
+          <li>
+            <a href="#">Sinda</a>
+          </li>
+          <li>
+            <a href="#">Vubwi</a>
+          </li>
+	          </ul>
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content">
+
+         {% include 'covidnavbar.html' %}
+  
+          <div class="px-4 px-md-5">
+            
+          <h2 class="mb-4  text-left">Central Province Covid-19 Dashboard</h2>
+          <p>In Zambia, from 3 January 2020 to 6:10pm CET, 22 November 2021, there have been 210,070 confirmed cases of COVID-19 with 3,667 deaths, reported to WHO. As of 17 November 2021, a total of 985,443 vaccine doses have been administered.</p>
+          <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+          <div class="card my-5" style="width: 18rem;">
+            <div class="card-content p-3">
+              <h2> 210,070 </h2>
+              <h3> confirmed cases </h1>
+            </div>
+          </div>
+          <div class="card my-5" style="width: 18rem;">
+            <div class="card-content p-3">
+              <h2> 3,667 </h2>
+              <h3> deaths </h1>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+{% endblock %}
